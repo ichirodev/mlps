@@ -22,7 +22,7 @@ def get_valid_drug_data(a, druginfo_url):
             drug_url = "" if a['href'] is None else a['href']
             subpage_url = druginfo_url + drug_url[2:len(drug_url)]
             drug_purpose = get_subpage_data(subpage_url)
-            return drug_name, drug_url, "" if drug_purpose is None else drug_purpose      
+            return drug_name.upper(), drug_url, "" if drug_purpose is None else drug_purpose      
     except Exception:
         print("Unable to get required data from ", a)
     return "", "", ""
